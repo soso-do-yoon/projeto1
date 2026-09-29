@@ -1,0 +1,1 @@
+https://projeto1-15s.pages.dev/oauth/callback/google
