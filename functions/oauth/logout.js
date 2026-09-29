@@ -20,3 +20,10 @@ export async function onRequestPost(context) {
     },
   });
 }
+
+export function onRequestGet() {
+  return new Response("Method Not Allowed", {
+    status: 405,
+    headers: { Allow: "POST", "Cache-Control": "no-store" },
+  });
+}
