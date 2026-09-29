@@ -1,3 +1,43 @@
-<script>
-    window.location.href = "examples/dashboard.html";
-</script>
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login OAuth</title>
+</head>
+<body>
+  <h1>Login OAuth</h1>
+  <p id="status">Verificando sessão...</p>
+  <div id="deslogado" hidden>
+    <a href="/oauth/login/google">Entrar com Google</a><br>
+    <a href="/oauth/login/github">Entrar com GitHub</a>
+  </div>
+
+  <div id="logado" hidden>
+    <p>Olá, <strong id="nome"></strong></p>
+    <p>E-mail: <span id="email"></span></p>
+    <p>Via: <span id="issuer"></span></p>
+    <form method="POST" action="/oauth/logout">
+      <button type="submit">Sair</button>
+    </form>
+  </div>
+    <script>
+    fetch("/api/me")
+      .then((r) => r.json())
+      .then((dados) => {
+        document.getElementById("status").hidden = true;
+        if (dados.authenticated) {
+          document.getElementById("nome").textContent = dados.displayName || "-";
+          document.getElementById("email").textContent = dados.email || "-";
+          document.getElementById("issuer").textContent = dados.issuer;
+          document.getElementById("logado").hidden = false;
+        } else {
+          document.getElementById("deslogado").hidden = false;
+        }
+      })
+      .catch(() => {
+        document.getElementById("status").textContent = "Erro ao verificar a sessão.";
+      });
+  </script>
+</body>
+</html>
