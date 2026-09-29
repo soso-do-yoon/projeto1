@@ -1,7 +1,7 @@
 import { randomToken, sha256 } from "../../_shared/crypto.js";
 import { makeCookie } from "../../_shared/cookies.js";
 import { PROVIDERS } from "../../_shared/providers.js";
-
+// Rota de login OAuth
 export async function onRequestGet(context) {
   const nome = context.params.provider;
   if (nome !== "google" && nome !== "github") {
