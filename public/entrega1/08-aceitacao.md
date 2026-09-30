@@ -17,4 +17,6 @@
 - [x] um cookie revogado não restaura a sessão;
 - [x] tokens e segredos não aparecem no HTML, nas URLs salvas, no armazenamento Web ou nos registros;
 - [x] a dupla consegue explicar por que os arquivos estáticos permanecem públicos;
-- [ ] as sessões administrativas foram encerradas no computador compartilhado.
+- [x] as sessões administrativas foram encerradas no computador compartilhado.
+
+Assinado pela dupla: Sophia Vitória e Gabriel
