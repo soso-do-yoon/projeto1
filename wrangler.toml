@@ -1,0 +1,8 @@
+name = "projeto1"
+compatibility_date = "2026-09-18"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "oauth-sessions-sophia"
+database_id = "95a101b2-cf7f-4d6d-931e-bed35b6d6347"
+migrations_dir = "migrations"
