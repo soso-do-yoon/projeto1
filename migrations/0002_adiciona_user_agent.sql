@@ -1,1 +1,1 @@
-ALTER TABEL sessions ADD COLUMN user_agent TEXT;
+ALTER TABLE sessions ADD COLUMN user_agent TEXT;
