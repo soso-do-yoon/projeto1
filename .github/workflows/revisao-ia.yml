@@ -34,7 +34,6 @@ jobs:
         with:
           prompt-file: prompt.txt
           provider: copilot
-          model: gpt-4.1
           system-prompt: Você é um revisor de código objetivo.
       - name: Comenta no PR
         env:
