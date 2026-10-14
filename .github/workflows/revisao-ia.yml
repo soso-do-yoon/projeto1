@@ -28,11 +28,12 @@ jobs:
             echo '```'
           } > prompt.txt
       - id: ia
-        uses: actions/ai-inference@v1
+        uses: actions/ai-inference@v2
         env:
           COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PAT }}
         with:
           prompt-file: prompt.txt
+          provider: copilot
           system-prompt: Você é um revisor de código objetivo.
       - name: Comenta no PR
         env:
